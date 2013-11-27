@@ -1,7 +1,7 @@
 function updateProgress($element, callback) {
     callback = (typeof callback === "undefined") ? function() {} : callback;
 
-    $.ajax({
+    jQuery.ajax({
         url: $element.data('update-url'),
         dataType: 'json',
         success: function(data) {
@@ -18,5 +18,5 @@ function updateProgress($element, callback) {
 }
 
 function trackProgress(element_id, callback) {
-    updateProgress($("#"+element_id+".meter"), callback);
+    updateProgress(jQuery("#"+element_id+".celery_progress"), callback);
 };

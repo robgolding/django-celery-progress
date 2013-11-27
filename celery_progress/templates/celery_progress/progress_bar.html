@@ -2,24 +2,6 @@
 
 <link rel='stylesheet' href='{% static "celery_progress/css/style.css" %}'>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-
-<script type="text/javascript" src='{% static "celery_progress/js/update.js" %}'>
-<script>
-    $(function() {
-        $(".meter > span").each(function() {
-            $(this)
-                .data("origWidth", $(this).width())
-                .width(0)
-                .animate({
-                    width: $(this).data("origWidth")
-                }, 1200);
-        });
-
-
-    });
-</script>
-
-<div id="{{ element_id }}" class="meter" data-update-url="{% url 'celery_progress:progress' task_id %}">
+<div id="{{ element_id }}" class="celery_progress" data-update-url="{% url 'celery_progress:progress' task_id %}">
     <span style="width: {% task_progress task_id %}%"></span>
 </div>

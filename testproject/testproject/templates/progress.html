@@ -1,4 +1,7 @@
-{% load celery_progress_tags %}
+{% load celery_progress_tags static %}
+
+<script type="text/javascript" src='{% static "celery_progress/js/jquery-2.0.3.min.js" %}'></script>
+<script type="text/javascript" src='{% static "celery_progress/js/update.js" %}'></script>
 
 {% progress_bar 'test_task' task_id %}
 
