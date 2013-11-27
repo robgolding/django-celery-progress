@@ -1,0 +1,9 @@
+{% load celery_progress_tags %}
+
+{% progress_bar 'test_task' task_id %}
+
+<script type='text/javascript'>
+    trackProgress('test_task', function taskDone(result) {
+        alert('Done! Result: '+result);
+    });
+</script>

@@ -1,0 +1,6 @@
+*.pyc
+*~
+django_celery_progress.egg-info
+/dist
+/build
+testproject/db.sqlite3
